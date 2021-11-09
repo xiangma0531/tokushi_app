@@ -1,5 +1,5 @@
 class SourcesController < ApplicationController
-  before_action :authenticate_admin!
+  before_action :move_to_index, except: :index
   before_action :set_source, only: [:show, :edit, :update]
 
   def index
@@ -46,5 +46,11 @@ class SourcesController < ApplicationController
 
   def set_source
     @source = Source.find(params[:id])
+  end
+
+  def move_to_index
+    unless admin_signed_in?
+      redirect_to root_path
+    end
   end
 end
