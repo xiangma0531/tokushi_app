@@ -8,6 +8,6 @@ class Source < ApplicationRecord
     validates :title
     validates :category_id
     validates :grade_id
-    validates :cnotent
+    validates :content
   end
 end

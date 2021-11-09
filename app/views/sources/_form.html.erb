@@ -1,0 +1,27 @@
+<%= form_with(model: source, local: true) do |f| %>
+
+  <div class="form-parts">
+    <%= f.label 'タイトル' %>
+    <%= f.text_field :title, placeholder: 'タイトル' %>
+  </div>
+
+  <div class="form-parts">
+    <%= f.label 'カテゴリー' %>
+    <%= f.collection_select :category_id, Category.all, :id, :name, {include_blank: "---"} %>
+  </div>
+
+  <div class="form-parts">
+    <%= f.label '校種' %>
+    <%= f.collection_select :grade_id, Grade.all, :id, :name, {include_blank: "---"}%>
+  </div>
+
+  <div class="form-parts">
+    <%= f.label '概要' %>
+    <%= f.text_area :content, placeholder: '概要を入力してください' %>
+  </div>
+
+  <div class="source-action">
+    <%= f.submit "作成", class: "source-action-btn" %>
+  </div>
+
+<% end %>
