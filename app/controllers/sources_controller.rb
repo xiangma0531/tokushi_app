@@ -2,7 +2,7 @@ class SourcesController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    
+    @sources = Source.all
   end
 
   def new
