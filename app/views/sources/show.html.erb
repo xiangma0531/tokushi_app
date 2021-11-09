@@ -1,0 +1,33 @@
+<div class="contents-wrapper">
+  <div class="contents">
+    <% if admin_signed_in? %>
+      <div class="edit-and-destroy-buttons">
+        <%= link_to '編集', edit_source_path(@source.id) %>
+        <%= link_to '削除', source_path(@source.id), method: :delete %>
+      </div>
+    <% else %>
+    <% end %>
+    <table class="source-table">
+      <tr>
+        <th class="single-row-table">タイトル</th>
+        <td class="single-row-table"><%= @source.title %></td>
+      </tr>
+
+      <tr>
+        <th class="single-row-table">カテゴリー</th>
+        <td class="single-row-table"><%= @source.category.name %></tr>
+      </tr>
+
+      <tr>
+        <th class="single-row-table">校種</th>
+        <td class="single-row-table"><%= @source.grade.name %></tr>
+      </tr>
+
+      <tr>
+        <th class="single-row-table">概要</th>
+        <td><%= @source.content %></td>
+      </tr>
+
+    </table>
+  </div>
+</div>
