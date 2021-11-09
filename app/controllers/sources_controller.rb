@@ -27,7 +27,7 @@ class SourcesController < ApplicationController
 
   def update
     if @source.update(source_params)
-      redirect_to dot_path(@source.id)
+      redirect_to source_path(@source.id)
     else
       render :edit
     end
