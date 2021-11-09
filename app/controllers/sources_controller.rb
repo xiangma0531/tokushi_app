@@ -1,5 +1,6 @@
 class SourcesController < ApplicationController
   before_action :authenticate_admin!
+  before_action :set_source, only: [:show, :edit, :update]
 
   def index
     @sources = Source.all
@@ -18,8 +19,32 @@ class SourcesController < ApplicationController
     end
   end
 
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @source.update(source_params)
+      redirect_to dot_path(@source.id)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    source = Source.find(params[:id])
+    source.destroy
+    redirect_to root_path
+  end
+
   private
   def source_params
     params.require(:source).permit(:title, :category_id, :grade_id, :content).merge(admin_id: current_admin.id)
+  end
+
+  def set_source
+    @source = Source.find(params[:id])
   end
 end
