@@ -10,4 +10,12 @@ class Source < ApplicationRecord
     validates :grade_id
     validates :content
   end
+
+  def self.search(search)
+    if search != ""
+      Source.where('content LIKE(?)', "%#{search}%")
+    else
+      Source.all
+    end
+  end
 end

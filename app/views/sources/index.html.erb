@@ -2,19 +2,7 @@
   <div class="contents-wrapper">
     <div class="contents">
       <% @sources.each do |source| %>
-        <div class="source">
-          <div class="source-upper">
-            <%= link_to source.title, source_path(source.id) %>
-          </div>
-          <div class="source-bottom">
-            <div class="source-bottom-left">
-              <%= source.category.name %>
-            </div>
-            <div class="source-bottom-right">
-              <%= source.grade.name %>
-            </div>
-          </div>
-        </div>
+        <%= render partial: "source", locals: { source: source } %>
       <% end %>
     </div>
   </div>
@@ -22,4 +10,8 @@
   <p>検索ボックスから検索してください</p>
 <% else %>
   上のボタンからログインおよび新規登録してください
+<% end %>
+<%= form_with(url: search_sources_path, local: true, method: :get, class: "search-form") do |form| %>
+  <%= form.text_field :keyword, placeholder: "検索", class: "search-input" %>
+  <%= form.submit "検索", class: "search-btn" %>
 <% end %>

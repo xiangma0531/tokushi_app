@@ -1,5 +1,5 @@
 class SourcesController < ApplicationController
-  before_action :move_to_index, except: :index
+  before_action :move_to_index, except: [:index, :show, :search]
   before_action :set_source, only: [:show, :edit, :update]
 
   def index
@@ -37,6 +37,10 @@ class SourcesController < ApplicationController
     source = Source.find(params[:id])
     source.destroy
     redirect_to root_path
+  end
+
+  def search
+    @sources = Source.search(params[:keyword])
   end
 
   private
