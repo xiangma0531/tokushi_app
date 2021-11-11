@@ -1,16 +1,3 @@
-<% if admin_signed_in? %>
-  <div class="contents-wrapper">
-    <div class="contents">
-      <% @sources.each do |source| %>
-        <%= render partial: "source", locals: { source: source } %>
-      <% end %>
-    </div>
-  </div>
-<% elsif user_signed_in? %>
-  <p>検索ボックスから検索してください</p>
-<% else %>
-  上のボタンからログインおよび新規登録してください
-<% end %>
 <%= search_form_for @p, url: search_sources_path do |f| %>
   <%# <%= form.text_field :keyword, placeholder: "検索", class: "search-input" %>
   <%# <%= form.submit "検索", class: "search-btn" %> 
@@ -28,3 +15,13 @@
   <br>
   <%= f.submit '検索' %>
 <% end %>
+検索結果
+<div class="contents row">
+  <% if @results.length != 0 %>
+    <% @results.each do |result| %>
+      <%= render partial: "source", locals: { source: result } %>
+    <% end %>
+  <% else %>
+    見つかりませんでした
+  <% end %>
+</div>

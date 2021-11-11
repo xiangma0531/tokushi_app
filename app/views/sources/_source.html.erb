@@ -1,0 +1,13 @@
+<div class="source">
+  <div class="source-upper">
+    <%= link_to source.title, source_path(source.id) %>
+  </div>
+  <div class="source-bottom">
+    <div class="source-bottom-left">
+      <%= source.category.name %>
+    </div>
+    <div class="source-bottom-right">
+      <%= source.grade.name %>
+    </div>
+  </div>
+</div>

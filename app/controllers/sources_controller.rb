@@ -1,5 +1,6 @@
 class SourcesController < ApplicationController
-  before_action :move_to_index, except: :index
+  before_action :move_to_index, except: [:index, :show, :search]
+  before_action :search_source, only: [:index, :search]
   before_action :set_source, only: [:show, :edit, :update]
 
   def index
@@ -39,6 +40,12 @@ class SourcesController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    # @sources = Source.search(params[:keyword])
+    @results = @p.result
+    # .includes(:category_id_eq)
+  end
+
   private
   def source_params
     params.require(:source).permit(:title, :category_id, :grade_id, :content).merge(admin_id: current_admin.id)
@@ -52,5 +59,9 @@ class SourcesController < ApplicationController
     unless admin_signed_in?
       redirect_to root_path
     end
+  end
+
+  def search_source
+    @p = Source.ransack(params[:q])
   end
 end
