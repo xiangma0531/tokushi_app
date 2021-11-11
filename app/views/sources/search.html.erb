@@ -1,10 +1,27 @@
-<%= form_with(url: search_sources_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "検索", class: "search-input" %>
-  <%= form.submit "検索", class: "search-btn" %>
+<%= search_form_for @p, url: search_sources_path do |f| %>
+  <%# <%= form.text_field :keyword, placeholder: "検索", class: "search-input" %>
+  <%# <%= form.submit "検索", class: "search-btn" %> 
+  <%= f.label :title_cont, 'タイトル' %>
+  <%= f.search_field :title_cont %>
+  <br>
+  <%= f.label :category_id_eq, 'カテゴリー' %>
+  <%= f.collection_select :category_id_eq, Category.all, :id, :name, include_blank: '指定なし' %>
+  <br>
+  <%= f.label :grade_id_eq, '校種' %>
+  <%= f.collection_select :grade_id_eq, Grade.all, :id, :name, include_blank: '指定なし' %>
+  <br>
+  <%= f.label :content_cont, '概要' %>
+  <%= f.search_field :content_cont %>
+  <br>
+  <%= f.submit '検索' %>
 <% end %>
 検索結果
 <div class="contents row">
-  <% @sources.each do |source| %>
-    <%= render partial: "source", locals: { source: source } %>
+  <% if @results.length != 0 %>
+    <% @results.each do |result| %>
+      <%= render partial: "source", locals: { source: result } %>
+    <% end %>
+  <% else %>
+    見つかりませんでした
   <% end %>
 </div>

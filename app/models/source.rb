@@ -11,11 +11,11 @@ class Source < ApplicationRecord
     validates :content
   end
 
-  def self.search(search)
-    if search != ""
-      Source.where('content LIKE(?)', "%#{search}%")
-    else
-      Source.all
-    end
-  end
+  # def self.search(search)
+  #   if search != ""
+  #     Source.where('content LIKE(?)', "%#{search}%")
+  #   else
+  #     Source.all
+  #   end
+  # end
 end
