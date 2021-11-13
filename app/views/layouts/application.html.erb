@@ -33,19 +33,19 @@
             </li>
           </ul>
         <% elsif user_signed_in? %>
-          <ul class="header_buttons">
+          <ul class="header-buttons">
             <li class="new-sources">
               <%= link_to '新規投稿', new_source_path %>
             </li>
-            <li>
-              <p id="menu_trigger"><%= current_user.name %></p>
+            <li class="user-session">
+              <p id="menu-trigger"><%= current_user.name %></p>
             </li>
           </ul>
-          <ul>
-            <li>
+          <ul id="user-menu">
+            <li class="menu-list" id="user-edit">
               <%= link_to 'ユーザー情報編集', edit_user_registration_path %>
             </li>
-            <li class="logout">
+            <li class="menu-list">
               <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
             </li>
           </ul>
