@@ -11,24 +11,24 @@
 
   <body>
     <header>
-      <div class="header-right">
+      <div class="header-left">
         <%= link_to 'Tokushi App', root_path %>
       </div>
-      <div class="header-left">
+      <div class="header-right">
         <% if admin_signed_in? %>
-          <ul class="header_buttons">
+          <ul class="header-buttons">
             <li class="new-sources">
-              <%= link_to '新規投稿', new_source_path %>
+              <%= link_to '新規投稿', new_source_path, class: "new-source-button" %>
             </li>
-            <li>
-              <p id="menu_trigger">管理人</p>
+            <li class="admin-session">
+              <p id="menu-trigger">管理人</p>
             </li>
           </ul>
-          <ul>
-            <li>
+          <ul id="admin-menu">
+            <li class="menu-list" id="admin-edit">
               <%= link_to '管理者情報編集', edit_admin_registration_path %>
             </li>
-            <li class="logout">
+            <li class="menu-list">
               <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %>
             </li>
           </ul>

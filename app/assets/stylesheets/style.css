@@ -1,0 +1,82 @@
+/* リセットCSS */
+body {
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+  background-color: #f5f5f3;
+}
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+ul,li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #666;
+}
+
+/* Tokushi App CSS */
+header{
+  height: 60px;
+  padding: 19px 100px 19px 80px;
+  background-color: aqua;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-left{
+  height: 100%;
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+
+.header-buttons{
+  display: flex;
+  align-items: center;
+}
+
+.new-sources{
+  padding: 5px 15px;
+  border: 2px solid #57c3e9;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.new-source-button{
+  color: #57c3e9;
+}
+
+.admin-session{
+  padding: 5px 15px;
+  margin-left: 15px;
+  border: 2px solid #57c3e9;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#admin-menu{
+  margin-left: 100px;
+  background-color: white;
+  border: 1px solid #666;
+}
+
+.menu-list{
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#admin-edit{
+  border-bottom: 1px solid #666;
+}
