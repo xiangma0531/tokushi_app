@@ -89,15 +89,32 @@ header{
 }
 
 .contents-wrapper{
-  width: 80%;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
+  height: calc(100vh - 130px);
 }
 
 .contents{
-  width: 100%;
+  width: 80vw;
+  padding: 5px;
 }
 
 .search-box{
   background-color: #fff;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+}
+
+.search-form-innerbox{
+  width: 70%;
+}
+
+.search-input{
+  width: 100%;
+}
+
+.search-select{
+  width: 50%;
 }
