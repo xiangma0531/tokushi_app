@@ -1,30 +1,32 @@
-<% if admin_signed_in? %>
-  <div class="contents-wrapper">
-    <div class="contents">
-      <% @sources.each do |source| %>
-        <%= render partial: "source", locals: { source: source } %>
-      <% end %>
-    </div>
+<div class="contents-wrapper">
+  <div class="contents">
+    検索ボックスから記事を検索できます
+    <%= search_form_for @p, url: search_sources_path, class: "search-box" do |f| %>
+      <%# <%= form.text_field :keyword, placeholder: "検索", class: "search-input" %>
+      <%# <%= form.submit "検索", class: "search-btn" %> 
+      <%= f.label :title_cont, 'タイトル' %><br>
+      <%= f.search_field :title_cont, placeholder: 'キーワードを入力してください' %>
+      <br>
+      <%= f.label :category_id_eq, 'カテゴリー' %><br>
+      <%= f.collection_select :category_id_eq, Category.all, :id, :name, include_blank: '指定なし' %>
+      <br>
+      <%= f.label :grade_id_eq, '校種' %><br>
+      <%= f.collection_select :grade_id_eq, Grade.all, :id, :name, include_blank: '指定なし' %>
+      <br>
+      <%= f.label :content_cont, '概要' %><br>
+      <%= f.search_field :content_cont, placeholder: 'キーワードを入力してください' %>
+      <br>
+      <%= f.submit '検索' %>
+    <% end %>
+    <% if admin_signed_in? %>
+      <div class="sources">
+        <% @sources.each do |source| %>
+          <%= render partial: "source", locals: { source: source } %>
+        <% end %>
+      </div>
+    <% elsif user_signed_in? %>
+    <% else %>
+      上のボタンからログインおよび新規登録してください
+    <% end %>
   </div>
-<% elsif user_signed_in? %>
-  <p>検索ボックスから検索してください</p>
-<% else %>
-  上のボタンからログインおよび新規登録してください
-<% end %>
-<%= search_form_for @p, url: search_sources_path do |f| %>
-  <%# <%= form.text_field :keyword, placeholder: "検索", class: "search-input" %>
-  <%# <%= form.submit "検索", class: "search-btn" %> 
-  <%= f.label :title_cont, 'タイトル' %>
-  <%= f.search_field :title_cont %>
-  <br>
-  <%= f.label :category_id_eq, 'カテゴリー' %>
-  <%= f.collection_select :category_id_eq, Category.all, :id, :name, include_blank: '指定なし' %>
-  <br>
-  <%= f.label :grade_id_eq, '校種' %>
-  <%= f.collection_select :grade_id_eq, Grade.all, :id, :name, include_blank: '指定なし' %>
-  <br>
-  <%= f.label :content_cont, '概要' %>
-  <%= f.search_field :content_cont %>
-  <br>
-  <%= f.submit '検索' %>
-<% end %>
+</div>

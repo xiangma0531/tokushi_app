@@ -45,6 +45,7 @@ header{
 }
 
 .new-sources{
+  margin-top: 10px;
   padding: 5px 15px;
   border: 2px solid #57c3e9;
   font-size: 18px;
@@ -58,6 +59,7 @@ header{
 
 .admin-session,.user-session{
   padding: 5px 15px;
+  margin-top: 10px;
   margin-left: 15px;
   border: 2px solid #57c3e9;
   font-size: 18px;
@@ -71,12 +73,31 @@ header{
   border: 1px solid #666;
 }
 
+#menu-trigger{
+  padding: 0;
+}
+
 .menu-list{
   padding: 5px 10px;
   font-size: 16px;
   font-weight: bold;
+  text-align: center;
 }
 
 #admin-edit,#user-edit{
   border-bottom: 1px solid #666;
+}
+
+.contents-wrapper{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+.contents{
+  width: 100%;
+}
+
+.search-box{
+  background-color: #fff;
 }
