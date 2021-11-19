@@ -1,20 +1,4 @@
-<%= search_form_for @p, url: search_sources_path do |f| %>
-  <%# <%= form.text_field :keyword, placeholder: "検索", class: "search-input" %>
-  <%# <%= form.submit "検索", class: "search-btn" %> 
-  <%= f.label :title_cont, 'タイトル' %>
-  <%= f.search_field :title_cont %>
-  <br>
-  <%= f.label :category_id_eq, 'カテゴリー' %>
-  <%= f.collection_select :category_id_eq, Category.all, :id, :name, include_blank: '指定なし' %>
-  <br>
-  <%= f.label :grade_id_eq, '校種' %>
-  <%= f.collection_select :grade_id_eq, Grade.all, :id, :name, include_blank: '指定なし' %>
-  <br>
-  <%= f.label :content_cont, '概要' %>
-  <%= f.search_field :content_cont %>
-  <br>
-  <%= f.submit '検索' %>
-<% end %>
+<%= render partial: "search_form", locals: { search: @p } %>
 検索結果
 <div class="contents row">
   <% if @results.length != 0 %>

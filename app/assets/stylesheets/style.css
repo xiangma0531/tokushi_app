@@ -118,3 +118,22 @@ header{
 .search-select{
   width: 50%;
 }
+
+.source {
+  width: 50%;
+  border: 1px solid #666;
+  padding: 5px 10px;
+  margin: 10px auto;
+  font-size: 14px;
+}
+
+.source-upper{
+  border-bottom: 1px solid #666;
+}
+
+.source-bottom{
+  margin: 5px;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
