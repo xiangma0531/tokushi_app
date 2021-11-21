@@ -1,11 +1,13 @@
 <%= render partial: "search_form", locals: { search: @p } %>
-検索結果
 <div class="contents row">
-  <% if @results.length != 0 %>
-    <% @results.each do |result| %>
-      <%= render partial: "source", locals: { source: result } %>
+  <div class="sources">
+    <span id="search-results">検索結果</span>
+    <% if @results.length != 0 %>
+      <% @results.each do |result| %>
+        <%= render partial: "source", locals: { source: result } %>
+      <% end %>
+    <% else %>
+      見つかりませんでした
     <% end %>
-  <% else %>
-    見つかりませんでした
-  <% end %>
+  </div>
 </div>

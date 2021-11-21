@@ -90,37 +90,57 @@ header{
 
 .contents-wrapper{
   margin-top: 20px;
-  display: flex;
-  justify-content: center;
+  margin: 0 auto;
   height: calc(100vh - 130px);
 }
 
 .contents{
   width: 80vw;
   padding: 5px;
+  margin: 0 auto;
 }
 
-.search-box{
+.search-box,.input-box{
   background-color: #fff;
   border: 1px solid black;
-  display: flex;
-  justify-content: center;
 }
 
-.search-form-innerbox{
+.search-form-innerbox,.input-form-innerbox{
   width: 70%;
+  margin: 0 auto;
 }
 
-.search-input{
+.input-text{
   width: 100%;
 }
 
-.search-select{
+.input-select{
+  width: 50%;
+}
+
+.form-parts{
+  padding: 5px 0 0;
+
+}
+
+#search-btn,#source-action-btn{
+  margin-top: 8px;
+  margin-bottom: 15px;
+  width: 60px;
+  padding: 3px 5px;
+  text-align: center;
+  background-color: aqua;
+  border: 2px double white;
+
+}
+
+.sources{
+  margin: 0 auto;
   width: 50%;
 }
 
 .source {
-  width: 50%;
+  background-color: white;
   border: 1px solid #666;
   padding: 5px 10px;
   margin: 10px auto;
@@ -136,4 +156,8 @@ header{
   padding: 5px 10px;
   display: flex;
   justify-content: space-between;
+}
+
+#search-results{
+  font-size: 20px;
 }
