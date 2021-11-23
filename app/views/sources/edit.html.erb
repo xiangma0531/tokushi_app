@@ -3,6 +3,7 @@
     <div class="form-wrapper">
       <h1 class="source-action-title">編集</h1>
       <%= form_with(model: @source, local: true, class: "input-box") do |f| %>
+        <%= render 'layouts/error_messages', model: f.object %>
         <div class="input-form-innerbox">
           <div class="form-parts">
             <%= f.label 'タイトル' %><br>
