@@ -22,6 +22,7 @@ a {
 }
 
 /* Tokushi App CSS */
+/* ヘッダー */
 header{
   height: 56px;
   padding: 0 80px;
@@ -101,6 +102,8 @@ header{
   margin: 0 auto;
 }
 
+/* 検索ボックス・新規投稿・編集画面・一覧表示画面 */
+
 .search-box,.input-box{
   background-color: #fff;
   border: 1px solid black;
@@ -161,4 +164,44 @@ header{
 
 #search-results{
   font-size: 20px;
+}
+
+/* 詳細確認画面 */
+
+.edit-and-destroy-buttons{
+  display: flex;
+  justify-content: center;
+}
+
+.edit-btn,.del-btn{
+  font-size: 20px;
+  margin: 5px 20px 30px;
+  padding: 5px;
+  border: 2px solid #57c3e9;
+}
+
+.source-table{
+  width: 100%;
+  margin-bottom: 30px;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+table th, table td{
+  border: 1px solid black;
+  height: 50px;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+.single-row-table{
+  text-align:center;
+}
+
+th{
+  width: 30%;
+}
+
+td{
+  width: 70%;
 }
