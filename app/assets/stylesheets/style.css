@@ -67,13 +67,14 @@ header{
   text-align: center;
 }
 
-#admin-menu,#user-menu{
+.menu{
   margin-left: 100px;
   background-color: white;
   border: 1px solid #666;
+  display: none;
 }
 
-#menu-trigger{
+.menu-trigger{
   padding: 0;
 }
 

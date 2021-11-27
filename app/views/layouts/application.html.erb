@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TokushiApp</title>
+    <title>特別支援教育データベース</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= javascript_pack_tag 'application', src: "https://code.jquery.com/jquery-3.3.1.min.js", integrity: "sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=", crossorigin: "anonymous" %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -12,7 +12,7 @@
   <body>
     <header>
       <div class="header-left">
-        <%= link_to 'Tokushi App', root_path %>
+        <%= link_to '特別支援教育データベース', root_path %>
       </div>
       <div class="header-right">
         <% if admin_signed_in? %>
@@ -21,10 +21,10 @@
               <%= link_to '新規投稿', new_source_path, class: "new-source-button" %>
             </li>
             <li class="admin-session">
-              <p id="menu-trigger">管理人</p>
+              <p class="menu-trigger">管理人</p>
             </li>
           </ul>
-          <ul id="admin-menu">
+          <ul class="menu">
             <li class="menu-list" id="admin-edit">
               <%= link_to '管理者情報編集', edit_admin_registration_path %>
             </li>
@@ -38,10 +38,10 @@
               <%= link_to '新規投稿', new_source_path %>
             </li>
             <li class="user-session">
-              <p id="menu-trigger"><%= current_user.name %></p>
+              <p class="menu-trigger"><%= current_user.name %></p>
             </li>
           </ul>
-          <ul id="user-menu">
+          <ul class="menu">
             <li class="menu-list" id="user-edit">
               <%= link_to 'ユーザー情報編集', edit_user_registration_path %>
             </li>
