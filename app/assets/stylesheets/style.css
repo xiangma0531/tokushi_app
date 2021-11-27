@@ -48,14 +48,14 @@ header{
 .new-sources{
   margin-top: 10px;
   padding: 5px 15px;
-  border: 2px solid #57c3e9;
+  border: 2px solid #666;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
 }
 
 .new-source-button{
-  color: #57c3e9;
+  color: #666;
 }
 
 .admin-session,.user-session{
@@ -102,9 +102,21 @@ header{
   margin: 0 auto;
 }
 
-/* 検索ボックス・新規投稿・編集画面・一覧表示画面 */
+/* 検索ボックス・新規投稿・編集画面・一覧表示画面・新規登録画面 */
 
-.search-box,.input-box{
+.new-regi-action,.edit-regi-action,.new-session-action,.search-action{
+  width: 90%;
+  margin: 5px auto 20px;
+}
+
+.new-regi-btn,.edit-regi-btn,.del-regi-btn,.login-btn{
+  font-size: 15px;
+  background-color: aqua;
+  border: 1px solid #666;
+  padding: 2px 5px;
+}
+
+.search-box,.input-box,.new_admin,.edit_admin,.new_user,.edit_user{
   background-color: #fff;
   border: 1px solid black;
 }
@@ -122,9 +134,9 @@ header{
   width: 50%;
 }
 
-.form-parts{
-  padding: 5px 0 0;
-
+.form-parts,.login-flash-message{
+  width:90%;
+  margin: 15px auto;
 }
 
 #search-btn,#source-action-btn{
