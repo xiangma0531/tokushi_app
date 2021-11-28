@@ -1,0 +1,219 @@
+/* リセットCSS */
+body {
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+  background-color: #f5f5f3;
+}
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+ul,li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #666;
+}
+
+/* Tokushi App CSS */
+/* ヘッダー */
+header{
+  height: 56px;
+  padding: 0 80px;
+  background-color: aqua;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-left{
+  height: 100%;
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+
+.header-buttons{
+  display: flex;
+  align-items: center;
+}
+
+.new-sources{
+  margin-top: 10px;
+  padding: 5px 15px;
+  border: 2px solid #666;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.new-source-button{
+  color: #666;
+}
+
+.admin-session,.user-session{
+  padding: 5px 15px;
+  margin-top: 10px;
+  margin-left: 25px;
+  border: 2px solid #57c3e9;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.menu{
+  margin-left: 100px;
+  background-color: white;
+  border: 1px solid #666;
+  display: none;
+}
+
+.menu-trigger{
+  padding: 0;
+}
+
+.menu-list{
+  padding: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#admin-edit,#user-edit{
+  border-bottom: 1px solid #666;
+}
+
+.contents-wrapper{
+  margin-top: 20px;
+  margin: 0 auto;
+  height: calc(100vh - 130px);
+}
+
+.contents{
+  width: 80vw;
+  padding: 5px;
+  margin: 0 auto;
+}
+
+/* 検索ボックス・新規投稿・編集画面・一覧表示画面・新規登録画面 */
+
+.new-regi-action,.edit-regi-action,.new-session-action,.search-action{
+  width: 90%;
+  margin: 5px auto 20px;
+}
+
+.new-regi-btn,.edit-regi-btn,.del-regi-btn,.login-btn{
+  font-size: 15px;
+  background-color: aqua;
+  border: 1px solid #666;
+  padding: 2px 5px;
+}
+
+.search-box,.input-box,.new_admin,.edit_admin,.new_user,.edit_user{
+  background-color: #fff;
+  border: 1px solid black;
+}
+
+.search-form-innerbox,.input-form-innerbox{
+  width: 70%;
+  margin: 0 auto;
+}
+
+.input-text{
+  width: 100%;
+}
+
+.input-select{
+  width: 50%;
+}
+
+.form-parts,.login-flash-message{
+  width:90%;
+  margin: 15px auto;
+}
+
+#search-btn,#source-action-btn{
+  margin-top: 8px;
+  margin-bottom: 15px;
+  width: 60px;
+  padding: 3px 5px;
+  text-align: center;
+  background-color: aqua;
+  border: 2px double white;
+
+}
+
+.sources{
+  margin: 0 auto;
+  width: 50%;
+}
+
+.source {
+  background-color: white;
+  border: 1px solid #666;
+  padding: 5px 10px;
+  margin: 10px auto;
+  font-size: 14px;
+}
+
+.source-upper{
+  border-bottom: 1px solid #666;
+}
+
+.source-bottom{
+  margin: 5px;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#search-results{
+  font-size: 20px;
+}
+
+/* 詳細確認画面 */
+
+.edit-and-destroy-buttons{
+  display: flex;
+  justify-content: center;
+}
+
+.edit-btn,.del-btn{
+  font-size: 20px;
+  margin: 5px 20px 30px;
+  padding: 5px;
+  border: 2px solid #57c3e9;
+}
+
+.source-table{
+  width: 100%;
+  margin-bottom: 30px;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+table th, table td{
+  border: 1px solid black;
+  height: 50px;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+.single-row-table{
+  text-align:center;
+}
+
+th{
+  width: 30%;
+}
+
+td{
+  width: 70%;
+}

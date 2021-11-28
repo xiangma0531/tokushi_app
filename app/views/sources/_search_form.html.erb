@@ -1,0 +1,30 @@
+<h3>検索ボックスから記事を検索できます</h3>
+<%= search_form_for search, url: search_sources_path, class: "search-box" do |f| %>
+  <div class="search-form-innerbox">
+    <%# <%= form.text_field :keyword, placeholder: "検索", class: "search-input" %>
+    <%# <%= form.submit "検索", class: "search-btn" %> 
+    <div class="form-parts">
+      <%= f.label :title_cont, 'タイトル', class: "label" %><br>
+      <%= f.search_field :title_cont, placeholder: 'キーワードを入力してください', class: "input-text" %>
+    </div>
+
+    <div class="form-parts">
+      <%= f.label :category_id_eq, 'カテゴリー', class: "label" %><br>
+      <%= f.collection_select :category_id_eq, Category.all, :id, :name, include_blank: '指定なし', class: "input-slelct" %>
+    </div>
+
+    <div class="form-parts">
+      <%= f.label :grade_id_eq, '校種', class: "label" %><br>
+      <%= f.collection_select :grade_id_eq, Grade.all, :id, :name, include_blank: '指定なし', class: "input-slelct" %>
+    </div>
+
+    <div class="form-parts">
+      <%= f.label :content_cont, '概要', class: "label" %><br>
+      <%= f.search_field :content_cont, placeholder: 'キーワードを入力してください', class: "input-text" %>
+    </div>
+
+    <div class="search-action">
+      <%= f.submit '検索', id: "search-btn" %>
+    </div>
+  </div>
+<% end %>

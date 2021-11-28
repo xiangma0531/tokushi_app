@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+      admin:
+        name: 名前
+      source:
+        title: タイトル
+        category_id: カテゴリー
+        grade_id: 校種
+        content: 概要
