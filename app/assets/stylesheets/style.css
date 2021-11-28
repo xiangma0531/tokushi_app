@@ -61,7 +61,7 @@ header{
 .admin-session,.user-session{
   padding: 5px 15px;
   margin-top: 10px;
-  margin-left: 15px;
+  margin-left: 25px;
   border: 2px solid #57c3e9;
   font-size: 18px;
   font-weight: bold;
@@ -80,8 +80,8 @@ header{
 }
 
 .menu-list{
-  padding: 5px 10px;
-  font-size: 16px;
+  padding: 5px;
+  font-size: 13px;
   font-weight: bold;
   text-align: center;
 }
